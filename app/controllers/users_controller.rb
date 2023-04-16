@@ -11,6 +11,17 @@ class UsersController < ApplicationController
     @users = User.all
     @book = Book.new
     @user = current_user
+    @users_unwhere = User.where.not(id: current_user.id) 
+  end
+  
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
+  end
+  
+  def followeds
+    user = User.find(params[:id])
+    @users = user.followeds
   end
 
   def edit
