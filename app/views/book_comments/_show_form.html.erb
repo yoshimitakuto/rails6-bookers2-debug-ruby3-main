@@ -1,0 +1,6 @@
+<%= form_with model: [book, book_comment], local: false do |f| %>
+ <div class="row">
+  <%= f.text_area :comment, rows: '5', class: 'col-md-12' %>
+  <%= f.submit '送信' %>
+ </div>
+<% end %>
